@@ -2,15 +2,11 @@
 def get_book_text(filepath):
     with open(filepath) as f:
         return f.read()
-    
-frankenstein = get_book_text("books/frankenstein.txt")
 
 # Function to count the number of words in a given text
 def count_words(text):
     # .split() divides the text into words using whitespace
     return len(text.split())
-
-word_count = count_words(frankenstein)
 
 # Function to count every character in the text (after converting to lowercase)
 def count_characters(text):
@@ -22,8 +18,6 @@ def count_characters(text):
         else:
             char_counts[char] = 1
     return char_counts
-
-num_of_chars = count_characters(frankenstein)
 
 # Function to sort alphabetical characters by count (greatest to least)
 def sort_char_counts(char_counts):

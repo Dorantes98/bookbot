@@ -1,17 +1,26 @@
-from stats import count_words, word_count, frankenstein, count_characters
-from stats import num_of_chars, get_book_text, sort_char_counts
+import sys
+from stats import get_book_text, count_words, count_characters, sort_char_counts
 
 def main():
-    # print(frankenstein)
-    # print(f"{word_count} words found in the document")
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    book_path = sys.argv[1]
 
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {book_path}...")
+
+    book_text = get_book_text(book_path)
+
+    word_count = count_words(book_text)
     print("----------- Word Count ----------")
-    print(f"Found {word_count} total words")
+    print(word_count)
+
+    # Get character counts and sort them
+    char_counts = count_characters(book_text)
+    sorted_counts = sort_char_counts(char_counts)
     print("--------- Character Count -------")
-    # Get the sorted list of alphabetical character counts
-    sorted_counts = sort_char_counts(num_of_chars)
     # Print each character and count in the desired format
     for char_count in sorted_counts:
         for char, count in char_count.items():
