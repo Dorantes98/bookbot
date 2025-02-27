@@ -62,8 +62,5 @@ Contains helper functions:
 - The character count only includes alphabetical characters (ignoring numbers, punctuation, etc.).
 - The program handles case-insensitivity by converting all text to lowercase.
 
-### License
-This project is licensed under the MIT License.
-
 ---
 Happy coding with BookBot! 🚀
